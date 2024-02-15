@@ -29,5 +29,8 @@
     "github": {
       "release": true
     }
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
