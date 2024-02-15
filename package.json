@@ -2,9 +2,9 @@
   "name": "identify-type",
   "version": "0.0.1",
   "description": "Quickly identify standard JavaScript types",
+  "type": "module",
   "source": "src/main.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
+  "module": "dist/main.js",
   "types": "dist/types.d.ts",
   "scripts": {
     "watch": "parcel watch",
