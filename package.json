@@ -9,13 +9,15 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "author": "Derek Milne",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@parcel/packager-ts": "^2.11.0",
     "@parcel/transformer-typescript-types": "^2.11.0",
+    "@vitest/coverage-v8": "^1.2.2",
     "parcel": "^2.11.0",
     "prettier": "3.2.5",
     "typescript": "^5.3.3",
