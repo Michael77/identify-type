@@ -1,14 +1,22 @@
 {
   "name": "identify-type",
   "version": "0.0.1",
-  "description": "Quickly identify common JavaScript types",
-  "main": "dist/index.js",
+  "description": "Quickly identify standard JavaScript types",
+  "source": "src/main.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "parcel watch",
+    "build": "parcel build"
   },
   "author": "Derek Milne",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "prettier": "3.2.5"
+    "@parcel/packager-ts": "^2.11.0",
+    "@parcel/transformer-typescript-types": "^2.11.0",
+    "parcel": "^2.11.0",
+    "prettier": "3.2.5",
+    "typescript": "^5.3.3"
   }
 }

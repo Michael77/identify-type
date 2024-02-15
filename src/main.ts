@@ -1,4 +1,4 @@
-import { Nil } from "./types";
+export type Nil = null | undefined;
 
 export function isNumber(x: unknown): x is number {
   return typeof x === "number" && !isNaN(x);
