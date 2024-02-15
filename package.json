@@ -10,7 +10,8 @@
     "watch": "parcel watch",
     "build": "parcel build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "release": "release-it"
   },
   "author": "Derek Milne",
   "license": "GPL-3.0-or-later",
@@ -20,7 +21,13 @@
     "@vitest/coverage-v8": "^1.2.2",
     "parcel": "^2.11.0",
     "prettier": "3.2.5",
+    "release-it": "^17.0.5",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
