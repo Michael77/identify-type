@@ -4,7 +4,7 @@
   "description": "Quickly identify standard JavaScript types",
   "type": "module",
   "source": "src/main.ts",
-  "module": "dist/main.js",
+  "main": "dist/main.js",
   "types": "dist/types.d.ts",
   "scripts": {
     "watch": "parcel watch",
@@ -29,8 +29,5 @@
     "github": {
       "release": true
     }
-  },
-  "files": [
-    "dist/"
-  ]
+  }
 }
