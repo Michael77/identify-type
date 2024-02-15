@@ -1,12 +1,28 @@
 import { describe, expect, it } from "vitest";
-import { isNumber } from "./main";
+import { isNil, isNumber } from "./main";
 
 describe("isNumber", () => {
   it("should return true for valid numbers", () => {
     expect(isNumber(5)).toBe(true);
+    expect(isNumber(23.7)).toBe(true);
+    expect(isNumber(-24)).toBe(true);
   });
 
   it("should return false for invalid numbers", () => {
     expect(isNumber(NaN)).toBe(false);
+  });
+});
+
+describe("isNil", () => {
+  it("should return true for null and undefined", () => {
+    expect(isNil(null)).toBe(true);
+    expect(isNil(undefined)).toBe(true);
+  });
+
+  it("should return false for non-nil types", () => {
+    expect(isNil(true)).toBe(false);
+    expect(isNil(false)).toBe(false);
+    expect(isNil(NaN)).toBe(false);
+    expect(isNil({})).toBe(false);
   });
 });
