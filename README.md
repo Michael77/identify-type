@@ -1,6 +1,6 @@
 # identify-type
 
-![NPM Version](https://img.shields.io/npm/v/identify-type)
+[![NPM Version](https://img.shields.io/npm/v/identify-type)](https://www.npmjs.com/package/identify-type)
 
 Quickly identify standard JavaScript types.
 
