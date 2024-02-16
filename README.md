@@ -1,5 +1,7 @@
 # identify-type
 
+![NPM Version](https://img.shields.io/npm/v/identify-type)
+
 Quickly identify standard JavaScript types.
 
 ## Installation
