@@ -15,6 +15,7 @@
   },
   "author": "Derek Milne",
   "license": "MIT",
+  "sideEffects": false,
   "devDependencies": {
     "@parcel/packager-ts": "^2.11.0",
     "@parcel/transformer-typescript-types": "^2.11.0",
