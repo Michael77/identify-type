@@ -1,6 +1,6 @@
 {
   "name": "identify-type",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Quickly identify standard JavaScript types",
   "type": "module",
   "source": "src/main.ts",
