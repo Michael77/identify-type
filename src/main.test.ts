@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isArray, isNil, isNumber } from "./main";
+import { isArray, isNil, isNumber, isObject } from "./main";
 
 describe("isNumber", () => {
   it("should return true for valid numbers", () => {
@@ -37,5 +37,19 @@ describe("isArray", () => {
     expect(isArray(null)).toBe(false);
     expect(isArray(undefined)).toBe(false);
     expect(isArray({})).toBe(false);
+  });
+});
+
+describe("isObject", () => {
+  it("should return true for objects", () => {
+    expect(isObject({})).toBe(true);
+    expect(isObject(Object.create({}))).toBe(true);
+    expect(isObject(Object.create(null))).toBe(true);
+  });
+
+  it("should return false for non-objects", () => {
+    expect(isObject(null)).toBe(false);
+    expect(isObject(undefined)).toBe(false);
+    expect(isObject([])).toBe(false);
   });
 });
