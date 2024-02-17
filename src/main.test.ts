@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isNil, isNumber } from "./main";
+import { isArray, isNil, isNumber } from "./main";
 
 describe("isNumber", () => {
   it("should return true for valid numbers", () => {
@@ -24,5 +24,18 @@ describe("isNil", () => {
     expect(isNil(false)).toBe(false);
     expect(isNil(NaN)).toBe(false);
     expect(isNil({})).toBe(false);
+  });
+});
+
+describe("isArray", () => {
+  it("should return true for arrays", () => {
+    expect(isArray([])).toBe(true);
+    expect(isArray(new Array())).toBe(true);
+  });
+
+  it("should return false for non-arrays", () => {
+    expect(isArray(null)).toBe(false);
+    expect(isArray(undefined)).toBe(false);
+    expect(isArray({})).toBe(false);
   });
 });
