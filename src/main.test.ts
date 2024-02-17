@@ -1,5 +1,12 @@
 import { describe, expect, test } from "vitest";
-import { IdentifierFunc, isArray, isNil, isNumber, isObject } from "./main.js";
+import {
+  IdentifierFunc,
+  isArray,
+  isNil,
+  isNumber,
+  isObject,
+  isString,
+} from "./main.js";
 
 enum t {
   NUM = "NUM",
@@ -7,6 +14,9 @@ enum t {
   NUM_FLOAT = "NUM_FLOAT",
   NUM_NEG = "NUM_NEG",
   NUM_NOT_A = "NUM_NOT_A",
+
+  STRING = "STRING",
+  STRING_EMPTY = "STRING_EMPTY",
 
   NULL = "NULL",
   UNDEFINED = "UNDEFINED",
@@ -26,6 +36,9 @@ const typeMap = new Map([
   [t.NUM_FLOAT, 23.7],
   [t.NUM_NEG, -24],
   [t.NUM_NOT_A, NaN],
+
+  [t.STRING, "foobar"],
+  [t.STRING_EMPTY, ""],
 
   [t.NULL, null],
   [t.UNDEFINED, undefined],
@@ -69,6 +82,8 @@ function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
 }
 
 testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
+
+testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
