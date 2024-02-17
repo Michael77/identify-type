@@ -1,55 +1,50 @@
-import { describe, expect, it } from "vitest";
-import { isArray, isNil, isNumber, isObject } from "./main";
+import { describe, expect, test } from "vitest";
+import { IdentifierFunc, isArray, isNil, isNumber, isObject } from "./main.js";
 
-describe("isNumber", () => {
-  it("should return true for valid numbers", () => {
-    expect(isNumber(5)).toBe(true);
-    expect(isNumber(23.7)).toBe(true);
-    expect(isNumber(-24)).toBe(true);
-  });
+const typeMap = new Map([
+  ["NUM", 7],
+  ["NUM_ZERO", 0],
+  ["NUM_FLOAT", 23.7],
+  ["NUM_NEG", -24],
+  ["NUM_NOT_A", NaN],
 
-  it("should return false for invalid numbers", () => {
-    expect(isNumber(NaN)).toBe(false);
-  });
-});
+  ["NULL", null],
+  ["UNDEFINED", undefined],
 
-describe("isNil", () => {
-  it("should return true for null and undefined", () => {
-    expect(isNil(null)).toBe(true);
-    expect(isNil(undefined)).toBe(true);
-  });
+  ["ARR", []],
+  ["ARR_CONSTRUCTOR", new Array()],
 
-  it("should return false for non-nil types", () => {
-    expect(isNil(true)).toBe(false);
-    expect(isNil(false)).toBe(false);
-    expect(isNil(NaN)).toBe(false);
-    expect(isNil({})).toBe(false);
-  });
-});
+  ["OBJ", {}],
+  ["OBJ_CREATE_NULL", Object.create(null)],
+  ["OBJ_CREATE", Object.create({})],
+]);
 
-describe("isArray", () => {
-  it("should return true for arrays", () => {
-    expect(isArray([])).toBe(true);
-    expect(isArray(new Array())).toBe(true);
-  });
+function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<string>) {
+  describe(f.name, () => {
+    describe("true cases", () => {
+      successCaseKeys.forEach((tag) => {
+        test(tag, () => {
+          expect(f(typeMap.get(tag))).toBe(true);
+        });
+      });
+    });
 
-  it("should return false for non-arrays", () => {
-    expect(isArray(null)).toBe(false);
-    expect(isArray(undefined)).toBe(false);
-    expect(isArray({})).toBe(false);
+    describe("false cases", () => {
+      typeMap.forEach((value, key) => {
+        if (!successCaseKeys.includes(key)) {
+          test(key, () => {
+            expect(f(value)).toBe(false);
+          });
+        }
+      });
+    });
   });
-});
+}
 
-describe("isObject", () => {
-  it("should return true for objects", () => {
-    expect(isObject({})).toBe(true);
-    expect(isObject(Object.create({}))).toBe(true);
-    expect(isObject(Object.create(null))).toBe(true);
-  });
+testIdentifierFunc(isNumber, ["NUM", "NUM_ZERO", "NUM_FLOAT", "NUM_NEG"]);
 
-  it("should return false for non-objects", () => {
-    expect(isObject(null)).toBe(false);
-    expect(isObject(undefined)).toBe(false);
-    expect(isObject([])).toBe(false);
-  });
-});
+testIdentifierFunc(isNil, ["NULL", "UNDEFINED"]);
+
+testIdentifierFunc(isArray, ["ARR", "ARR_CONSTRUCTOR"]);
+
+testIdentifierFunc(isObject, ["OBJ", "OBJ_CREATE", "OBJ_CREATE_NULL"]);
