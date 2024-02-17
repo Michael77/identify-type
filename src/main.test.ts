@@ -1,25 +1,43 @@
 import { describe, expect, test } from "vitest";
 import { IdentifierFunc, isArray, isNil, isNumber, isObject } from "./main.js";
 
+enum t {
+  NUM = "NUM",
+  NUM_ZERO = "NUM_ZERO",
+  NUM_FLOAT = "NUM_FLOAT",
+  NUM_NEG = "NUM_NEG",
+  NUM_NOT_A = "NUM_NOT_A",
+
+  NULL = "NULL",
+  UNDEFINED = "UNDEFINED",
+
+  ARR = "ARR",
+  ARR_CONSTRUCTOR = "ARR_CONSTRUCTOR",
+
+  OBJ = "OBJ",
+  OBJ_CREATE_NULL = "OBJ_CREATE_NULL",
+  OBJ_CREATE = "OBJ_CREATE",
+}
+
 const typeMap = new Map([
-  ["NUM", 7],
-  ["NUM_ZERO", 0],
-  ["NUM_FLOAT", 23.7],
-  ["NUM_NEG", -24],
-  ["NUM_NOT_A", NaN],
+  [t.NUM, 7],
+  [t.NUM_ZERO, 0],
+  [t.NUM_FLOAT, 23.7],
+  [t.NUM_NEG, -24],
+  [t.NUM_NOT_A, NaN],
 
-  ["NULL", null],
-  ["UNDEFINED", undefined],
+  [t.NULL, null],
+  [t.UNDEFINED, undefined],
 
-  ["ARR", []],
-  ["ARR_CONSTRUCTOR", new Array()],
+  [t.ARR, []],
+  [t.ARR_CONSTRUCTOR, new Array()],
 
-  ["OBJ", {}],
-  ["OBJ_CREATE_NULL", Object.create(null)],
-  ["OBJ_CREATE", Object.create({})],
+  [t.OBJ, {}],
+  [t.OBJ_CREATE_NULL, Object.create(null)],
+  [t.OBJ_CREATE, Object.create({})],
 ]);
 
-function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<string>) {
+function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
   describe(f.name, () => {
     describe("true cases", () => {
       successCaseKeys.forEach((tag) => {
@@ -41,10 +59,10 @@ function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<string>) {
   });
 }
 
-testIdentifierFunc(isNumber, ["NUM", "NUM_ZERO", "NUM_FLOAT", "NUM_NEG"]);
+testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
 
-testIdentifierFunc(isNil, ["NULL", "UNDEFINED"]);
+testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
-testIdentifierFunc(isArray, ["ARR", "ARR_CONSTRUCTOR"]);
+testIdentifierFunc(isArray, [t.ARR, t.ARR_CONSTRUCTOR]);
 
-testIdentifierFunc(isObject, ["OBJ", "OBJ_CREATE", "OBJ_CREATE_NULL"]);
+testIdentifierFunc(isObject, [t.OBJ, t.OBJ_CREATE, t.OBJ_CREATE_NULL]);
