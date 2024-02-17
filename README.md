@@ -2,6 +2,9 @@
 
 Quickly identify standard JavaScript types.
 
+🌲 ES6 Tree Shaking  
+✈️ First-Class TypeScript Support
+
 ## Installation
 
 ```bash
