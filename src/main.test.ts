@@ -21,10 +21,12 @@ enum t {
   NULL = "NULL",
   UNDEFINED = "UNDEFINED",
 
-  ARR = "ARR",
-  ARR_CONSTRUCTOR = "ARR_CONSTRUCTOR",
+  ARRAY = "ARRAY",
+  ARRAY_EMPTY = "ARRAY_EMPTY",
+  ARRAY_CONSTRUCTOR = "ARRAY_CONSTRUCTOR",
 
   OBJ = "OBJ",
+  OBJ_EMPTY = "OBJ_EMPTY",
   OBJ_CREATE_NULL = "OBJ_CREATE_NULL",
   OBJ_CREATE = "OBJ_CREATE",
   OBJ_CLASS = "OBJ_CLASS",
@@ -43,10 +45,18 @@ const typeMap = new Map([
   [t.NULL, null],
   [t.UNDEFINED, undefined],
 
-  [t.ARR, []],
-  [t.ARR_CONSTRUCTOR, new Array()],
+  [t.ARRAY, [123, 1, 2, 4, "test"]],
+  [t.ARRAY_EMPTY, []],
+  [t.ARRAY_CONSTRUCTOR, new Array()],
 
-  [t.OBJ, {}],
+  [
+    t.OBJ,
+    {
+      foo: "bar",
+      five: 5,
+    },
+  ],
+  [t.OBJ_EMPTY, {}],
   [t.OBJ_CREATE_NULL, Object.create(null)],
   [t.OBJ_CREATE, Object.create({})],
   [
@@ -87,10 +97,11 @@ testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
-testIdentifierFunc(isArray, [t.ARR, t.ARR_CONSTRUCTOR]);
+testIdentifierFunc(isArray, [t.ARRAY, t.ARRAY_EMPTY, t.ARRAY_CONSTRUCTOR]);
 
 testIdentifierFunc(isObject, [
   t.OBJ,
+  t.OBJ_EMPTY,
   t.OBJ_CREATE,
   t.OBJ_CREATE_NULL,
   t.OBJ_CLASS,
