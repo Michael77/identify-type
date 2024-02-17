@@ -17,6 +17,7 @@ enum t {
   OBJ = "OBJ",
   OBJ_CREATE_NULL = "OBJ_CREATE_NULL",
   OBJ_CREATE = "OBJ_CREATE",
+  OBJ_CLASS = "OBJ_CLASS",
 }
 
 const typeMap = new Map([
@@ -35,6 +36,14 @@ const typeMap = new Map([
   [t.OBJ, {}],
   [t.OBJ_CREATE_NULL, Object.create(null)],
   [t.OBJ_CREATE, Object.create({})],
+  [
+    t.OBJ_CLASS,
+    new (class Dog {
+      woof() {
+        console.log("woof");
+      }
+    })(),
+  ],
 ]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
@@ -65,4 +74,9 @@ testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
 testIdentifierFunc(isArray, [t.ARR, t.ARR_CONSTRUCTOR]);
 
-testIdentifierFunc(isObject, [t.OBJ, t.OBJ_CREATE, t.OBJ_CREATE_NULL]);
+testIdentifierFunc(isObject, [
+  t.OBJ,
+  t.OBJ_CREATE,
+  t.OBJ_CREATE_NULL,
+  t.OBJ_CLASS,
+]);
