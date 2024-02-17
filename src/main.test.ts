@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest";
 import {
   IdentifierFunc,
   isArray,
+  isBoolean,
   isNil,
   isNumber,
   isObject,
@@ -17,6 +18,9 @@ enum t {
 
   STRING = "STRING",
   STRING_EMPTY = "STRING_EMPTY",
+
+  BOOL_TRUE = "BOOL_TRUE",
+  BOOL_FALSE = "BOOL_FALSE",
 
   NULL = "NULL",
   UNDEFINED = "UNDEFINED",
@@ -41,6 +45,9 @@ const typeMap = new Map([
 
   [t.STRING, "foobar"],
   [t.STRING_EMPTY, ""],
+
+  [t.BOOL_TRUE, true],
+  [t.BOOL_FALSE, false],
 
   [t.NULL, null],
   [t.UNDEFINED, undefined],
@@ -94,6 +101,8 @@ function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
 testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
 
 testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY]);
+
+testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 

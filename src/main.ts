@@ -10,6 +10,10 @@ export function isString(x: unknown): x is string {
   return typeof x === "string";
 }
 
+export function isBoolean(x: unknown): x is boolean {
+  return typeof x === "boolean";
+}
+
 export function isNil(x: unknown): x is Nil {
   return x === null || x === undefined;
 }
