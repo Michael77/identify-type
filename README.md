@@ -4,6 +4,7 @@ Quickly identify standard JavaScript types without having to look up the correct
 
 🌲 ES6 Tree Shaking  
 ✈️ First-Class TypeScript Support
+0️ Zero Dependencies
 
 ## Installation
 
