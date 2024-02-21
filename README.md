@@ -29,7 +29,3 @@ console.log("hello world");
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
 
 Remember to update tests accordingly.
-
-## License
-
-[MIT](LICENSE)
