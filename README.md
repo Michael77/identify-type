@@ -3,7 +3,7 @@
 Quickly identify standard JavaScript types without having to look up the correct syntax.
 
 🌲 ES6 Tree Shaking  
-✈️ First-Class TypeScript Support
+✈️ First-Class TypeScript Support  
 0️ Zero Dependencies
 
 ## Installation
