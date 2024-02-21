@@ -7,7 +7,8 @@
 
 `identify-type` is a JavaScript library of utility methods designed to quickly identify standard types without the need to refer to correct syntax.
 
-**Key Features:**  
+**Key Features:**
+
 🌲 ES6 **Tree Shaking** Support  
 ✈️ Bundled **TypeScript** Definitions  
 🫙 Zero Dependencies
