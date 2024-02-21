@@ -6,11 +6,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-      - run: npm ci
-      - run: npm run build
-      - run: npm test
+
+      - name: Install Dev Deps
+        run: npm ci
+
+      - name: Test Build
+        run: npm run build
+
+      - name: Run Tests
+        run: npm coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        env:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: Michael77/identify-type
