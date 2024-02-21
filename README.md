@@ -2,8 +2,8 @@
 
 Quickly identify standard JavaScript types without having to look up the correct syntax.
 
-🌲 ES6 Tree Shaking  
-✈️ First-Class TypeScript Support  
+🌲 ES6 Tree Shaking Support  
+✈️ Bundled TypeScript Definitions  
 🫙 Zero Dependencies
 
 ## Installation
