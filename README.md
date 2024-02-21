@@ -1,4 +1,4 @@
-# Identify Type 🔍
+# Identify Type
 
 [![Build Status](https://github.com/Michael77/identify-type/workflows/Run%20Tests/badge.svg?branch=master)](https://github.com/Michael77/identify-type/actions?query=branch%3Amaster)
 [![NPM Version](https://img.shields.io/npm/v/identify-type)](https://www.npmjs.com/package/identify-type)
