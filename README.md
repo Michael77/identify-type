@@ -8,7 +8,7 @@
 
 **Key Features:**
 
-🌲 ES6 **Tree Shaking** Support  
+🌲 ES6 **Tree-Shaking** Support  
 ✈️ Bundled **TypeScript** Definitions  
 🫙 Zero Dependencies
 
