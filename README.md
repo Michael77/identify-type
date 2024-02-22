@@ -27,7 +27,7 @@ function square(x: number): number {
 }
 
 square(2); // 4
-square(NaN); // NaN
+square(NaN); // NaN (Bren, what does "NaN" mean in our financial report?)
 ```
 
 ## Installation
