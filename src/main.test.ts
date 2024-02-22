@@ -35,12 +35,13 @@ enum t {
 
   ARR,
   ARR_EMPTY,
-  ARR_CONSTRUCTOR,
+  ARR_NEW,
 
   OBJ,
   OBJ_EMPTY,
   OBJ_CREATE_NULL,
   OBJ_CREATE,
+  OBJ_NEW,
 
   CLASS,
 
@@ -78,7 +79,7 @@ const typeMap = new Map([
 
   [t.ARR, [123, 1, 2, 4, "test"]],
   [t.ARR_EMPTY, []],
-  [t.ARR_CONSTRUCTOR, new Array()],
+  [t.ARR_NEW, new Array()],
 
   [
     t.OBJ,
@@ -90,6 +91,7 @@ const typeMap = new Map([
   [t.OBJ_EMPTY, {}],
   [t.OBJ_CREATE_NULL, Object.create(null)],
   [t.OBJ_CREATE, Object.create({})],
+  [t.OBJ_NEW, new Object()],
 
   [
     t.CLASS,
@@ -129,13 +131,14 @@ testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
-testIdentifierFunc(isArray, [t.ARR, t.ARR_EMPTY, t.ARR_CONSTRUCTOR]);
+testIdentifierFunc(isArray, [t.ARR, t.ARR_EMPTY, t.ARR_NEW]);
 
 testIdentifierFunc(isObject, [
   t.OBJ,
   t.OBJ_EMPTY,
   t.OBJ_CREATE,
   t.OBJ_CREATE_NULL,
+  t.OBJ_NEW,
 ]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
