@@ -1,6 +1,6 @@
 # Identify Type
 
-<img align="right" width="160px" src="./logo/color.png">
+<img align="right" width="160px" src="https://raw.githubusercontent.com/Michael77/identify-type/master/logo/color.png">
 
 [![Build Status](https://github.com/Michael77/identify-type/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Michael77/identify-type/actions?query=branch%3Amaster)
 [![codecov](https://codecov.io/gh/Michael77/identify-type/branch/master/graph/badge.svg)](https://codecov.io/gh/Michael77/identify-type)
