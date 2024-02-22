@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/Michael77/identify-type/branch/master/graph/badge.svg)](https://codecov.io/gh/Michael77/identify-type)
 [![NPM Version](https://img.shields.io/npm/v/identify-type)](https://www.npmjs.com/package/identify-type)
 
-`identify-type` is a JavaScript library of utility methods designed to quickly identify standard types without the need to refer to correct syntax.
+`identify-type` is a tiny JavaScript library designed to quickly identify standard types without needing to reference correct syntax.
 
 **Key Features:**
 
