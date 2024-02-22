@@ -53,6 +53,12 @@ enum t {
   REGEX,
 
   SYMBOL,
+
+  MAP,
+  MAP_WEAK,
+
+  SET,
+  SET_WEAK,
 }
 
 const typeMap = new Map([
@@ -112,6 +118,12 @@ const typeMap = new Map([
   [t.REGEX, /ab+c/],
 
   [t.SYMBOL, Symbol("foo")],
+
+  [t.MAP, new Map()],
+  [t.MAP_WEAK, new WeakMap()],
+
+  [t.SET, new Set()],
+  [t.SET_WEAK, new WeakSet()],
 ]);
 
 testIdentifierFunc(isNumber, [
