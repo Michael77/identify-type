@@ -48,6 +48,8 @@ enum t {
   FUNC_ARROW,
 
   DATE,
+
+  REGEX,
 }
 
 const typeMap = new Map([
@@ -102,6 +104,8 @@ const typeMap = new Map([
   [t.FUNC_ARROW, () => {}],
 
   [t.DATE, new Date()],
+
+  [t.REGEX, /ab+c/],
 ]);
 
 testIdentifierFunc(isNumber, [
