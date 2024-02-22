@@ -1,6 +1,6 @@
 {
   "name": "identify-type",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Quickly identify standard JavaScript types",
   "license": "MIT",
   "author": "Derek Milne",
