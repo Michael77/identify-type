@@ -61,9 +61,9 @@ isObject({ foo: "bar" }); // true
 isObject(Object.create({})); // true
 isObject(Object.create(null)); // true
 
-isObject(new Date()); // false
+isObject(null); // false
 isObject([]); // false
-isObject(/ab+c/); // false
+isObject(new Date()); // false
 ```
 
 ## Contributing
