@@ -20,7 +20,7 @@ npm i identify-type
 
 ## Documentation
 
-All functions accept an argument of any type and return a boolean indicating the answer to the query.
+All functions accept an argument of any type and return a boolean indicating the answer to the query. If using TypeScript, types are also narrowed using type predicates.
 
 ### `isNumber`
 
