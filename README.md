@@ -10,7 +10,7 @@
 
 **Key Features:**
 
-🌲 ES6 **Tree-Shaking** Support  
+🌲 Support ES6 **Tree-Shaking**  
 ✈️ Bundled **TypeScript** Definitions  
 🫙 Zero Dependencies
 
