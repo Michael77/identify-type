@@ -59,6 +59,8 @@ enum t {
 
   SET,
   SET_WEAK,
+
+  PROMISE,
 }
 
 const typeMap = new Map([
@@ -124,6 +126,8 @@ const typeMap = new Map([
 
   [t.SET, new Set()],
   [t.SET_WEAK, new WeakSet()],
+
+  [t.PROMISE, new Promise(() => {})],
 ]);
 
 testIdentifierFunc(isNumber, [
