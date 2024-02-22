@@ -15,6 +15,7 @@ enum t {
   NUM_FLOAT,
   NUM_NEG,
   NUM_NOT_A,
+  NUM_INFINITY,
 
   STR,
   STR_EMPTY,
@@ -46,6 +47,7 @@ const typeMap = new Map([
   [t.NUM_FLOAT, 23.7],
   [t.NUM_NEG, -24],
   [t.NUM_NOT_A, NaN],
+  [t.NUM_INFINITY, Infinity],
 
   [t.STR, "foobar"],
   [t.STR_EMPTY, ""],
@@ -84,7 +86,13 @@ const typeMap = new Map([
   ],
 ]);
 
-testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
+testIdentifierFunc(isNumber, [
+  t.NUM,
+  t.NUM_ZERO,
+  t.NUM_FLOAT,
+  t.NUM_NEG,
+  t.NUM_INFINITY,
+]);
 
 testIdentifierFunc(isString, [
   t.STR,
