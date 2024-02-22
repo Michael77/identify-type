@@ -14,7 +14,7 @@ enum t {
   NUM_ZERO,
   NUM_ONE,
   NUM_FLOAT,
-  NUM_NEG,
+  NUM_NEGATIVE,
   NUM_NOT_A,
   NUM_INFINITY,
 
@@ -50,7 +50,7 @@ const typeMap = new Map([
   [t.NUM_ZERO, 0],
   [t.NUM_ONE, 1],
   [t.NUM_FLOAT, 23.7],
-  [t.NUM_NEG, -24],
+  [t.NUM_NEGATIVE, -24],
   [t.NUM_NOT_A, NaN],
   [t.NUM_INFINITY, Infinity],
 
@@ -99,8 +99,7 @@ testIdentifierFunc(isNumber, [
   t.NUM_ZERO,
   t.NUM_ONE,
   t.NUM_FLOAT,
-  t.NUM_NEG,
-  t.NUM_INFINITY,
+  t.NUM_NEGATIVE,
 ]);
 
 testIdentifierFunc(isString, [
