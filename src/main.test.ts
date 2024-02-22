@@ -18,6 +18,8 @@ enum t {
   NUM_NOT_A,
   NUM_INFINITY,
 
+  BIGINT,
+
   STR,
   STR_EMPTY,
   STR_LIKE_NUMBER,
@@ -53,6 +55,8 @@ const typeMap = new Map([
   [t.NUM_NEGATIVE, -24],
   [t.NUM_NOT_A, NaN],
   [t.NUM_INFINITY, Infinity],
+
+  [t.BIGINT, BigInt(980928340982309482093480298349082934)],
 
   [t.STR, "foobar"],
   [t.STR_EMPTY, ""],
