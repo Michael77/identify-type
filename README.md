@@ -1,9 +1,9 @@
 # Identify Type
 
-<img align="right" width="160px" src="https://raw.githubusercontent.com/Michael77/identify-type/master/logo/color.png">
+<img align="right" width="160px" src="https://raw.githubusercontent.com/milne-dev/identify-type/master/logo/color.png">
 
-[![Build Status](https://github.com/Michael77/identify-type/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Michael77/identify-type/actions?query=branch%3Amaster)
-[![codecov](https://codecov.io/gh/Michael77/identify-type/branch/master/graph/badge.svg)](https://codecov.io/gh/Michael77/identify-type)
+[![Build Status](https://github.com/milne-dev/identify-type/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/milne-dev/identify-type/actions?query=branch%3Amaster)
+[![codecov](https://codecov.io/gh/milne-dev/identify-type/branch/master/graph/badge.svg)](https://codecov.io/gh/milne-dev/identify-type)
 [![NPM Version](https://img.shields.io/npm/v/identify-type)](https://www.npmjs.com/package/identify-type)
 
 `identify-type` is a tiny JavaScript library designed to quickly identify standard types without needing to reference correct syntax.
