@@ -18,10 +18,15 @@
 npm i identify-type
 ```
 
-## Usage
+## Documentation
+
+All functions accept an argument of any type and return a boolean indicating the answer to the query.
+
+### `isNumber`
 
 ```javascript
-console.log("hello world");
+isNumber(3); // true
+isNumber(NaN); // false
 ```
 
 ## Contributing
