@@ -12,6 +12,7 @@ import {
 enum t {
   NUM,
   NUM_ZERO,
+  NUM_ONE,
   NUM_FLOAT,
   NUM_NEG,
   NUM_NOT_A,
@@ -44,6 +45,7 @@ enum t {
 const typeMap = new Map([
   [t.NUM, 7],
   [t.NUM_ZERO, 0],
+  [t.NUM_ONE, 1],
   [t.NUM_FLOAT, 23.7],
   [t.NUM_NEG, -24],
   [t.NUM_NOT_A, NaN],
@@ -89,6 +91,7 @@ const typeMap = new Map([
 testIdentifierFunc(isNumber, [
   t.NUM,
   t.NUM_ZERO,
+  t.NUM_ONE,
   t.NUM_FLOAT,
   t.NUM_NEG,
   t.NUM_INFINITY,
