@@ -18,6 +18,7 @@ enum t {
 
   STRING = "STRING",
   STRING_EMPTY = "STRING_EMPTY",
+  STRING_LIKE_NUMBER = "STRING_LIKE_NUMBER",
 
   BOOL_TRUE = "BOOL_TRUE",
   BOOL_FALSE = "BOOL_FALSE",
@@ -45,6 +46,7 @@ const typeMap = new Map([
 
   [t.STRING, "foobar"],
   [t.STRING_EMPTY, ""],
+  [t.STRING_LIKE_NUMBER, "27"],
 
   [t.BOOL_TRUE, true],
   [t.BOOL_FALSE, false],
@@ -76,6 +78,24 @@ const typeMap = new Map([
   ],
 ]);
 
+testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
+
+testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY, t.STRING_LIKE_NUMBER]);
+
+testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
+
+testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
+
+testIdentifierFunc(isArray, [t.ARRAY, t.ARRAY_EMPTY, t.ARRAY_CONSTRUCTOR]);
+
+testIdentifierFunc(isObject, [
+  t.OBJ,
+  t.OBJ_EMPTY,
+  t.OBJ_CREATE,
+  t.OBJ_CREATE_NULL,
+  t.OBJ_CLASS,
+]);
+
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
   describe(f.name, () => {
     describe("true cases", () => {
@@ -97,21 +117,3 @@ function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
     });
   });
 }
-
-testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
-
-testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY]);
-
-testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
-
-testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
-
-testIdentifierFunc(isArray, [t.ARRAY, t.ARRAY_EMPTY, t.ARRAY_CONSTRUCTOR]);
-
-testIdentifierFunc(isObject, [
-  t.OBJ,
-  t.OBJ_EMPTY,
-  t.OBJ_CREATE,
-  t.OBJ_CREATE_NULL,
-  t.OBJ_CLASS,
-]);
