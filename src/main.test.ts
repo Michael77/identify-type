@@ -51,6 +51,8 @@ enum t {
   DATE,
 
   REGEX,
+
+  SYMBOL,
 }
 
 const typeMap = new Map([
@@ -108,6 +110,8 @@ const typeMap = new Map([
   [t.DATE, new Date()],
 
   [t.REGEX, /ab+c/],
+
+  [t.SYMBOL, Symbol("foo")],
 ]);
 
 testIdentifierFunc(isNumber, [
