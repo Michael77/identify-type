@@ -16,9 +16,9 @@ enum t {
   NUM_NEG = "NUM_NEG",
   NUM_NOT_A = "NUM_NOT_A",
 
-  STRING = "STRING",
-  STRING_EMPTY = "STRING_EMPTY",
-  STRING_LIKE_NUMBER = "STRING_LIKE_NUMBER",
+  STR = "STR",
+  STR_EMPTY = "STR_EMPTY",
+  STR_LIKE_NUMBER = "STR_LIKE_NUMBER",
 
   BOOL_TRUE = "BOOL_TRUE",
   BOOL_FALSE = "BOOL_FALSE",
@@ -26,9 +26,9 @@ enum t {
   NULL = "NULL",
   UNDEFINED = "UNDEFINED",
 
-  ARRAY = "ARRAY",
-  ARRAY_EMPTY = "ARRAY_EMPTY",
-  ARRAY_CONSTRUCTOR = "ARRAY_CONSTRUCTOR",
+  ARR = "ARR",
+  ARR_EMPTY = "ARR_EMPTY",
+  ARR_CONSTRUCTOR = "ARR_CONSTRUCTOR",
 
   OBJ = "OBJ",
   OBJ_EMPTY = "OBJ_EMPTY",
@@ -44,9 +44,9 @@ const typeMap = new Map([
   [t.NUM_NEG, -24],
   [t.NUM_NOT_A, NaN],
 
-  [t.STRING, "foobar"],
-  [t.STRING_EMPTY, ""],
-  [t.STRING_LIKE_NUMBER, "27"],
+  [t.STR, "foobar"],
+  [t.STR_EMPTY, ""],
+  [t.STR_LIKE_NUMBER, "27"],
 
   [t.BOOL_TRUE, true],
   [t.BOOL_FALSE, false],
@@ -54,9 +54,9 @@ const typeMap = new Map([
   [t.NULL, null],
   [t.UNDEFINED, undefined],
 
-  [t.ARRAY, [123, 1, 2, 4, "test"]],
-  [t.ARRAY_EMPTY, []],
-  [t.ARRAY_CONSTRUCTOR, new Array()],
+  [t.ARR, [123, 1, 2, 4, "test"]],
+  [t.ARR_EMPTY, []],
+  [t.ARR_CONSTRUCTOR, new Array()],
 
   [
     t.OBJ,
@@ -80,13 +80,13 @@ const typeMap = new Map([
 
 testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
 
-testIdentifierFunc(isString, [t.STRING, t.STRING_EMPTY, t.STRING_LIKE_NUMBER]);
+testIdentifierFunc(isString, [t.STR, t.STR_EMPTY, t.STR_LIKE_NUMBER]);
 
 testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
-testIdentifierFunc(isArray, [t.ARRAY, t.ARRAY_EMPTY, t.ARRAY_CONSTRUCTOR]);
+testIdentifierFunc(isArray, [t.ARR, t.ARR_EMPTY, t.ARR_CONSTRUCTOR]);
 
 testIdentifierFunc(isObject, [
   t.OBJ,
