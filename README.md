@@ -1,5 +1,7 @@
 # Identify Type
 
+<img align="right" width="160px" src="./logo/color.png">
+
 [![Build Status](https://github.com/Michael77/identify-type/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/Michael77/identify-type/actions?query=branch%3Amaster)
 [![codecov](https://codecov.io/gh/Michael77/identify-type/branch/master/graph/badge.svg)](https://codecov.io/gh/Michael77/identify-type)
 [![NPM Version](https://img.shields.io/npm/v/identify-type)](https://www.npmjs.com/package/identify-type)
