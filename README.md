@@ -42,7 +42,9 @@ All functions accept an argument of any type and return a boolean indicating the
 
 ```javascript
 isNumber(3); // true
+isNumber(-27.5); // true
 isNumber(NaN); // false
+isNumber(Infinity); // false
 ```
 
 ## Contributing
