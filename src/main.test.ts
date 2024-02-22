@@ -19,6 +19,9 @@ enum t {
   STR = "STR",
   STR_EMPTY = "STR_EMPTY",
   STR_LIKE_NUMBER = "STR_LIKE_NUMBER",
+  STR_LIKE_BOOL = "STR_LIKE_BOOL",
+  STR_LIKE_ARR = "STR_LIKE_ARR",
+  STR_LIKE_OBJ = "STR_LIKE_OBJ",
 
   BOOL_TRUE = "BOOL_TRUE",
   BOOL_FALSE = "BOOL_FALSE",
@@ -47,6 +50,9 @@ const typeMap = new Map([
   [t.STR, "foobar"],
   [t.STR_EMPTY, ""],
   [t.STR_LIKE_NUMBER, "27"],
+  [t.STR_LIKE_BOOL, "true"],
+  [t.STR_LIKE_ARR, "[]"],
+  [t.STR_LIKE_OBJ, "{}"],
 
   [t.BOOL_TRUE, true],
   [t.BOOL_FALSE, false],
@@ -80,7 +86,14 @@ const typeMap = new Map([
 
 testIdentifierFunc(isNumber, [t.NUM, t.NUM_ZERO, t.NUM_FLOAT, t.NUM_NEG]);
 
-testIdentifierFunc(isString, [t.STR, t.STR_EMPTY, t.STR_LIKE_NUMBER]);
+testIdentifierFunc(isString, [
+  t.STR,
+  t.STR_EMPTY,
+  t.STR_LIKE_NUMBER,
+  t.STR_LIKE_BOOL,
+  t.STR_LIKE_ARR,
+  t.STR_LIKE_OBJ,
+]);
 
 testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
 
