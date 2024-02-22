@@ -7,7 +7,7 @@ import {
   isNumber,
   isObject,
   isString,
-} from "./main.js";
+} from "./main";
 
 enum t {
   NUM,
