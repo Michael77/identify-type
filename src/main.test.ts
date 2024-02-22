@@ -10,34 +10,34 @@ import {
 } from "./main.js";
 
 enum t {
-  NUM = "NUM",
-  NUM_ZERO = "NUM_ZERO",
-  NUM_FLOAT = "NUM_FLOAT",
-  NUM_NEG = "NUM_NEG",
-  NUM_NOT_A = "NUM_NOT_A",
+  NUM,
+  NUM_ZERO,
+  NUM_FLOAT,
+  NUM_NEG,
+  NUM_NOT_A,
 
-  STR = "STR",
-  STR_EMPTY = "STR_EMPTY",
-  STR_LIKE_NUMBER = "STR_LIKE_NUMBER",
-  STR_LIKE_BOOL = "STR_LIKE_BOOL",
-  STR_LIKE_ARR = "STR_LIKE_ARR",
-  STR_LIKE_OBJ = "STR_LIKE_OBJ",
+  STR,
+  STR_EMPTY,
+  STR_LIKE_NUMBER,
+  STR_LIKE_BOOL,
+  STR_LIKE_ARR,
+  STR_LIKE_OBJ,
 
-  BOOL_TRUE = "BOOL_TRUE",
-  BOOL_FALSE = "BOOL_FALSE",
+  BOOL_TRUE,
+  BOOL_FALSE,
 
-  NULL = "NULL",
-  UNDEFINED = "UNDEFINED",
+  NULL,
+  UNDEFINED,
 
-  ARR = "ARR",
-  ARR_EMPTY = "ARR_EMPTY",
-  ARR_CONSTRUCTOR = "ARR_CONSTRUCTOR",
+  ARR,
+  ARR_EMPTY,
+  ARR_CONSTRUCTOR,
 
-  OBJ = "OBJ",
-  OBJ_EMPTY = "OBJ_EMPTY",
-  OBJ_CREATE_NULL = "OBJ_CREATE_NULL",
-  OBJ_CREATE = "OBJ_CREATE",
-  OBJ_CLASS = "OBJ_CLASS",
+  OBJ,
+  OBJ_EMPTY,
+  OBJ_CREATE_NULL,
+  OBJ_CREATE,
+  OBJ_CLASS,
 }
 
 const typeMap = new Map([
@@ -112,9 +112,9 @@ testIdentifierFunc(isObject, [
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
   describe(f.name, () => {
     describe("true cases", () => {
-      successCaseKeys.forEach((tag) => {
-        test(tag, () => {
-          expect(f(typeMap.get(tag))).toBe(true);
+      successCaseKeys.forEach((key) => {
+        test(t[key], () => {
+          expect(f(typeMap.get(key))).toBe(true);
         });
       });
     });
@@ -122,7 +122,7 @@ function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
     describe("false cases", () => {
       typeMap.forEach((value, key) => {
         if (!successCaseKeys.includes(key)) {
-          test(key, () => {
+          test(t[key], () => {
             expect(f(value)).toBe(false);
           });
         }
