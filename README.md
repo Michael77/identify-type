@@ -42,6 +42,8 @@ All functions accept an argument of any type and return a boolean indicating the
 
 ### `isNumber`
 
+This returns `true` for all real numbers, naturally excluding `NaN` and `Infinity`.
+
 ```javascript
 isNumber(3); // true
 isNumber(-27.5); // true
