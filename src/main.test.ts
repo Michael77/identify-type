@@ -99,7 +99,7 @@ const typeMap = new Map([
     t.CLASS,
     new (class Dog {
       woof() {
-        console.log("woof");
+        return "arf";
       }
     })(),
   ],
