@@ -40,6 +40,9 @@ enum t {
   OBJ_CREATE_NULL,
   OBJ_CREATE,
   OBJ_CLASS,
+
+  FUNC,
+  FUNC_ARROW,
 }
 
 const typeMap = new Map([
@@ -86,6 +89,9 @@ const typeMap = new Map([
       }
     })(),
   ],
+
+  [t.FUNC, function () {}],
+  [t.FUNC_ARROW, () => {}],
 ]);
 
 testIdentifierFunc(isNumber, [
