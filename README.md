@@ -30,6 +30,13 @@ square(2); // 4
 square(NaN); // NaN (Bren, what does "NaN" mean in our financial report?)
 ```
 
+Use `identify-type` to make working with JavaScript more enjoyable.
+
+```javascript
+typeof null; // "object"
+typeof []; // "object"
+```
+
 ## Installation
 
 ```bash
