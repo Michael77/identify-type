@@ -47,8 +47,23 @@ This returns `true` for all real numbers, naturally excluding `NaN` and `Infinit
 ```javascript
 isNumber(3); // true
 isNumber(-27.5); // true
+
 isNumber(NaN); // false
 isNumber(Infinity); // false
+```
+
+### `isObject`
+
+Since almost everything in JavaScript is an object, this method only returns `true` for plain objects.
+
+```javascript
+isObject({ foo: "bar" }); // true
+isObject(Object.create({})); // true
+isObject(Object.create(null)); // true
+
+isObject(new Date()); // false
+isObject([]); // false
+isObject(/ab+c/); // false
 ```
 
 ## Contributing
