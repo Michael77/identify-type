@@ -46,7 +46,9 @@ enum t {
   CLASS,
 
   FUNC,
+  FUNC_ASYNC,
   FUNC_ARROW,
+  FUNC_ARROW_ASYNC,
 
   DATE,
 
@@ -113,7 +115,9 @@ const typeMap = new Map([
   ],
 
   [t.FUNC, function () {}],
+  [t.FUNC_ASYNC, async function () {}],
   [t.FUNC_ARROW, () => {}],
+  [t.FUNC_ARROW_ASYNC, async () => {}],
 
   [t.DATE, new Date()],
 
