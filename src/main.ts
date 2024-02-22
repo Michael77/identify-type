@@ -3,7 +3,7 @@ export type Nil = null | undefined;
 export type IdentifierFunc = (x: unknown) => Boolean;
 
 export function isNumber(x: unknown): x is number {
-  return typeof x === "number" && !isNaN(x);
+  return typeof x === "number" && !Number.isNaN(x);
 }
 
 export function isString(x: unknown): x is string {
