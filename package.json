@@ -39,5 +39,17 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Michael77/identify-type"
-  }
+  },
+  "keywords": [
+    "inspect",
+    "identify",
+    "type",
+    "typescript",
+    "narrow",
+    "predicate",
+    "assert",
+    "isObject",
+    "isNumber",
+    "nil"
+  ]
 }
