@@ -12,6 +12,22 @@
 ✈️ Bundled **TypeScript** Definitions  
 🫙 Zero Dependencies
 
+## Rationale
+
+There are many possible pitfalls when identifying a type in JavaScript, even when using TypeScript:
+
+```typescript
+function square(x: number): number {
+  if (typeof x !== "number") {
+    throw new Error("Argument 'x' must be a number");
+  }
+  return x * x;
+}
+
+square(2); // 4
+square(NaN); // NaN
+```
+
 ## Installation
 
 ```bash
