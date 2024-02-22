@@ -23,5 +23,9 @@ export function isArray(x: unknown): x is Array<unknown> {
 }
 
 export function isObject(x: unknown): x is Object {
-  return !isNil(x) && typeof x === "object" && !isArray(x);
+  return (
+    x !== null &&
+    typeof x === "object" &&
+    (x.constructor === Object || x.constructor === undefined)
+  );
 }

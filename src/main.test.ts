@@ -41,10 +41,13 @@ enum t {
   OBJ_EMPTY,
   OBJ_CREATE_NULL,
   OBJ_CREATE,
-  OBJ_CLASS,
+
+  CLASS,
 
   FUNC,
   FUNC_ARROW,
+
+  DATE,
 }
 
 const typeMap = new Map([
@@ -85,8 +88,9 @@ const typeMap = new Map([
   [t.OBJ_EMPTY, {}],
   [t.OBJ_CREATE_NULL, Object.create(null)],
   [t.OBJ_CREATE, Object.create({})],
+
   [
-    t.OBJ_CLASS,
+    t.CLASS,
     new (class Dog {
       woof() {
         console.log("woof");
@@ -96,6 +100,8 @@ const typeMap = new Map([
 
   [t.FUNC, function () {}],
   [t.FUNC_ARROW, () => {}],
+
+  [t.DATE, new Date()],
 ]);
 
 testIdentifierFunc(isNumber, [
@@ -126,7 +132,6 @@ testIdentifierFunc(isObject, [
   t.OBJ_EMPTY,
   t.OBJ_CREATE,
   t.OBJ_CREATE_NULL,
-  t.OBJ_CLASS,
 ]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
