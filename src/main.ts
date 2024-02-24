@@ -33,3 +33,7 @@ export function isObject(x: unknown): x is Object {
 export function isFunction(x: unknown): x is Function {
   return x instanceof Function;
 }
+
+export function isPromise(x: unknown): x is Promise<unknown> {
+  return x instanceof Promise;
+}

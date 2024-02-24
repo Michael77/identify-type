@@ -7,6 +7,7 @@ import {
   isNil,
   isNumber,
   isObject,
+  isPromise,
   isString,
 } from "./main";
 
@@ -175,6 +176,8 @@ testIdentifierFunc(isFunction, [
   t.FUNC_ARROW,
   t.FUNC_ARROW_ASYNC,
 ]);
+
+testIdentifierFunc(isPromise, [t.PROMISE]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
   describe(f.name, () => {
