@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest";
 import {
   IdentifierFunc,
   isArray,
+  isBigInt,
   isBoolean,
   isError,
   isFunction,
@@ -150,6 +151,8 @@ testIdentifierFunc(isNumber, [
   t.NUM_FLOAT,
   t.NUM_NEGATIVE,
 ]);
+
+testIdentifierFunc(isBigInt, [t.BIGINT]);
 
 testIdentifierFunc(isString, [
   t.STR,

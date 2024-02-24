@@ -6,6 +6,10 @@ export function isNumber(x: unknown): x is number {
   return Number.isFinite(x);
 }
 
+export function isBigInt(x: unknown): x is BigInt {
+  return typeof x === "bigint";
+}
+
 export function isString(x: unknown): x is string {
   return typeof x === "string";
 }
