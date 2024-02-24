@@ -47,6 +47,7 @@ enum t {
   CLASS,
 
   FUNC,
+  FUNC_NAMED,
   FUNC_ASYNC,
   FUNC_ARROW,
   FUNC_ARROW_ASYNC,
@@ -116,6 +117,7 @@ const typeMap = new Map([
   ],
 
   [t.FUNC, function () {}],
+  [t.FUNC_NAMED, function myFunc() {}],
   [t.FUNC_ASYNC, async function () {}],
   [t.FUNC_ARROW, () => {}],
   [t.FUNC_ARROW_ASYNC, async () => {}],
@@ -168,6 +170,7 @@ testIdentifierFunc(isObject, [
 
 testIdentifierFunc(isFunction, [
   t.FUNC,
+  t.FUNC_NAMED,
   t.FUNC_ASYNC,
   t.FUNC_ARROW,
   t.FUNC_ARROW_ASYNC,
