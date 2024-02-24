@@ -3,6 +3,7 @@ import {
   IdentifierFunc,
   isArray,
   isBoolean,
+  isFunction,
   isNil,
   isNumber,
   isObject,
@@ -163,6 +164,13 @@ testIdentifierFunc(isObject, [
   t.OBJ_CREATE,
   t.OBJ_CREATE_NULL,
   t.OBJ_NEW,
+]);
+
+testIdentifierFunc(isFunction, [
+  t.FUNC,
+  t.FUNC_ASYNC,
+  t.FUNC_ARROW,
+  t.FUNC_ARROW_ASYNC,
 ]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {

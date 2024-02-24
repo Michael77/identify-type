@@ -29,3 +29,7 @@ export function isObject(x: unknown): x is Object {
     (x.constructor === Object || x.constructor === undefined)
   );
 }
+
+export function isFunction(x: unknown): x is Function {
+  return x instanceof Function;
+}
