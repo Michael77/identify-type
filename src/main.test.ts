@@ -23,6 +23,7 @@ enum t {
   NUM_INFINITY,
 
   BIGINT,
+  BIGINT_LITERAL,
 
   STR,
   STR_EMPTY,
@@ -82,6 +83,7 @@ const typeMap = new Map([
   [t.NUM_INFINITY, Infinity],
 
   [t.BIGINT, BigInt(980928340982309482093480298349082934)],
+  [t.BIGINT_LITERAL, 9007199254740991n],
 
   [t.STR, "foobar"],
   [t.STR_EMPTY, ""],
@@ -152,7 +154,7 @@ testIdentifierFunc(isNumber, [
   t.NUM_NEGATIVE,
 ]);
 
-testIdentifierFunc(isBigInt, [t.BIGINT]);
+testIdentifierFunc(isBigInt, [t.BIGINT, t.BIGINT_LITERAL]);
 
 testIdentifierFunc(isString, [
   t.STR,
