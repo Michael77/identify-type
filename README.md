@@ -30,7 +30,7 @@ square(2); // 4
 square(NaN); // NaN (Bren, what does "NaN" mean in our financial report?)
 ```
 
-Use `identify-type` to make working with JavaScript more enjoyable.
+Use `identify-type` to make working with JavaScript types more enjoyable.
 
 ```javascript
 typeof null; // "object"
