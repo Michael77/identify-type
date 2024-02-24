@@ -18,6 +18,10 @@ export function isBoolean(x: unknown): x is boolean {
   return typeof x === "boolean";
 }
 
+export function isSymbol(x: unknown): x is symbol {
+  return typeof x === "symbol";
+}
+
 export function isNil(x: unknown): x is Nil {
   return x === null || x === undefined;
 }

@@ -11,6 +11,7 @@ import {
   isObject,
   isPromise,
   isString,
+  isSymbol,
 } from "./main";
 
 enum t {
@@ -166,6 +167,8 @@ testIdentifierFunc(isString, [
 ]);
 
 testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
+
+testIdentifierFunc(isSymbol, [t.SYMBOL]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
