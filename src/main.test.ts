@@ -20,6 +20,13 @@ enum t {
   NUM_ONE,
   NUM_FLOAT,
   NUM_NEGATIVE,
+  NUM_POS_ZERO,
+  NUM_NEG_ZERO,
+  NUM_MIN_VALUE,
+  NUM_MAX_VALUE,
+  NUM_MIN_SAFE_INTEGER,
+  NUM_MAX_SAFE_INTEGER,
+
   NUM_NOT_A,
   NUM_INFINITY,
 
@@ -80,6 +87,13 @@ const typeMap = new Map([
   [t.NUM_ONE, 1],
   [t.NUM_FLOAT, 23.7],
   [t.NUM_NEGATIVE, -24],
+  [t.NUM_POS_ZERO, +0],
+  [t.NUM_NEG_ZERO, -0],
+  [t.NUM_MIN_VALUE, Number.MIN_VALUE],
+  [t.NUM_MAX_VALUE, Number.MAX_VALUE],
+  [t.NUM_MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER],
+  [t.NUM_MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER],
+
   [t.NUM_NOT_A, NaN],
   [t.NUM_INFINITY, Infinity],
 
@@ -153,6 +167,12 @@ testIdentifierFunc(isNumber, [
   t.NUM_ONE,
   t.NUM_FLOAT,
   t.NUM_NEGATIVE,
+  t.NUM_POS_ZERO,
+  t.NUM_NEG_ZERO,
+  t.NUM_MIN_VALUE,
+  t.NUM_MAX_VALUE,
+  t.NUM_MIN_SAFE_INTEGER,
+  t.NUM_MAX_SAFE_INTEGER,
 ]);
 
 testIdentifierFunc(isBigInt, [t.BIGINT, t.BIGINT_LITERAL]);
