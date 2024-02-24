@@ -3,6 +3,7 @@ import {
   IdentifierFunc,
   isArray,
   isBoolean,
+  isError,
   isFunction,
   isNil,
   isNumber,
@@ -182,6 +183,8 @@ testIdentifierFunc(isFunction, [
 ]);
 
 testIdentifierFunc(isPromise, [t.PROMISE]);
+
+testIdentifierFunc(isError, [t.ERROR]);
 
 function testIdentifierFunc(f: IdentifierFunc, successCaseKeys: Array<t>) {
   describe(f.name, () => {

@@ -37,3 +37,7 @@ export function isFunction(x: unknown): x is Function {
 export function isPromise(x: unknown): x is Promise<unknown> {
   return x instanceof Promise;
 }
+
+export function isError(x: unknown): x is Error {
+  return x instanceof Error;
+}
