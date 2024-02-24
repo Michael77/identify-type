@@ -26,6 +26,7 @@ enum t {
   NUM_MAX_VALUE,
   NUM_MIN_SAFE_INTEGER,
   NUM_MAX_SAFE_INTEGER,
+  NUM_EPSILON,
 
   NUM_NOT_A,
   NUM_INFINITY,
@@ -93,6 +94,7 @@ const typeMap = new Map([
   [t.NUM_MAX_VALUE, Number.MAX_VALUE],
   [t.NUM_MIN_SAFE_INTEGER, Number.MIN_SAFE_INTEGER],
   [t.NUM_MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER],
+  [t.NUM_EPSILON, Number.EPSILON],
 
   [t.NUM_NOT_A, NaN],
   [t.NUM_INFINITY, Infinity],
@@ -173,6 +175,7 @@ testIdentifierFunc(isNumber, [
   t.NUM_MAX_VALUE,
   t.NUM_MIN_SAFE_INTEGER,
   t.NUM_MAX_SAFE_INTEGER,
+  t.NUM_EPSILON,
 ]);
 
 testIdentifierFunc(isBigInt, [t.BIGINT, t.BIGINT_LITERAL]);
