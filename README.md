@@ -159,9 +159,3 @@ isPromise(new Promise(() => {})); // true
 isFunction(() => {}); // true
 isFunction(function* () {}); // true
 ```
-
-## Contributing
-
-Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
-
-Remember to update tests accordingly.
