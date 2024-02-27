@@ -141,6 +141,25 @@ isBigInt(BigInt("980928340982309482093480298349082934")); // true
 isBigInt(9001); // false
 ```
 
+### `isString`
+
+```javascript
+isString("foo"); // true
+```
+
+### `isPromise`
+
+```javascript
+isPromise(new Promise(() => {})); // true
+```
+
+### `isFunction`
+
+```javascript
+isFunction(() => {}); // true
+isFunction(function* () {}); // true
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
