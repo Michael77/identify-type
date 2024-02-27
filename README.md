@@ -43,6 +43,10 @@ typeof []; // "object"
 npm i identify-type
 ```
 
+### Node.js
+
+See [Node.js docs](https://nodejs.org/api/esm.html#enabling) for importing ES modules like this one.
+
 ## Documentation
 
 All functions accept an argument of any type and return a boolean indicating the answer to the query. If using TypeScript, types are also narrowed using type predicates.
