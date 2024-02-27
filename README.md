@@ -120,6 +120,17 @@ isSymbol(new Symbol()); // true
 isSymbol(☮️); // false
 ```
 
+### `isBoolean`
+
+```javascript
+isBoolean(true); // true
+isBoolean(false); // true
+
+isBoolean(0); // false
+isBoolean("true"); // false
+isBoolean(null); // false
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
