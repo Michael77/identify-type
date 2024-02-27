@@ -73,6 +73,16 @@ isObject([]); // false
 isObject(new Date()); // false
 ```
 
+### `isArray`
+
+```javascript
+isArray([]); // true
+isArray(new Array(1, 2, 3)); // true
+
+isArray(new Uint8Array(32)); // false
+isArray("[]"); // false
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
