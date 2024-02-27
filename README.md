@@ -94,6 +94,24 @@ isNil(undefined); // true
 isNil(0); // false
 ```
 
+### `isError`
+
+Returns `true` only for valid error classes.
+
+```javascript
+try {
+  throw new Error("something went wrong");
+} catch (e) {
+  isError(e); // true
+}
+
+try {
+  throw "something went wrong";
+} catch (e) {
+  isError(e); // false
+}
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
