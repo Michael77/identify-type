@@ -43,6 +43,10 @@ typeof []; // "object"
 npm i identify-type
 ```
 
+```javascript
+import { isNumber, isObject } from "identify-type";
+```
+
 ### Node.js
 
 See [Node.js docs](https://nodejs.org/api/esm.html#enabling) for importing ES modules like this one.
