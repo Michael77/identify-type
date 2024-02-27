@@ -126,7 +126,7 @@ try {
 isSymbol(new Symbol()); // true
 isSymbol(Symbol.iterator); // true
 
-isSymbol(☮️); // false
+isSymbol("☮️"); // false
 ```
 
 ### `isBoolean`
