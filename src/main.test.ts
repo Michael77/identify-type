@@ -64,6 +64,7 @@ enum t {
   FUNC_ASYNC,
   FUNC_ARROW,
   FUNC_ARROW_ASYNC,
+  FUNC_GENERATOR,
 
   DATE,
 
@@ -145,6 +146,7 @@ const typeMap = new Map([
   [t.FUNC_ASYNC, async function () {}],
   [t.FUNC_ARROW, () => {}],
   [t.FUNC_ARROW_ASYNC, async () => {}],
+  [t.FUNC_GENERATOR, function* () {}],
 
   [t.DATE, new Date()],
 
@@ -211,6 +213,7 @@ testIdentifierFunc(isFunction, [
   t.FUNC_ASYNC,
   t.FUNC_ARROW,
   t.FUNC_ARROW_ASYNC,
+  t.FUNC_GENERATOR,
 ]);
 
 testIdentifierFunc(isPromise, [t.PROMISE]);
