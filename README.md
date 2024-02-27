@@ -116,6 +116,7 @@ try {
 
 ```javascript
 isSymbol(new Symbol()); // true
+isSymbol(Symbol.iterator); // true
 
 isSymbol(☮️); // false
 ```
