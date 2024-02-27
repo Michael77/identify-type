@@ -85,7 +85,7 @@ isArray("[]"); // false
 
 ### `isNil`
 
-`Nil` is an exported type that means `null | undefined`.
+`Nil` is an exported type that means `null` or `undefined`.
 
 ```javascript
 isNil(null); // true
