@@ -39,7 +39,7 @@ export function isObject(x: unknown): x is Object {
 }
 
 export function isFunction(x: unknown): x is Function {
-  return x instanceof Function;
+  return typeof x === "function";
 }
 
 export function isPromise(x: unknown): x is Promise<unknown> {
