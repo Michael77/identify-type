@@ -83,6 +83,17 @@ isArray(new Uint8Array(32)); // false
 isArray("[]"); // false
 ```
 
+### `isNil`
+
+`Nil` is an exported type that means `null | undefined`.
+
+```javascript
+isNil(null); // true
+isNil(undefined); // true
+
+isNil(0); // false
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
