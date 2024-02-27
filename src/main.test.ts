@@ -51,6 +51,18 @@ enum t {
   ARR_EMPTY,
   ARR_NEW,
 
+  ARR_INT8,
+  ARR_UINT8,
+  ARR_UINT8CLAMPED,
+  ARR_INT16,
+  ARR_UINT16,
+  ARR_INT32,
+  ARR_UINT32,
+  ARR_BIGINT64,
+  ARR_BIGUINT64,
+  ARR_FLOAT32,
+  ARR_FLOAT64,
+
   OBJ,
   OBJ_EMPTY,
   OBJ_CREATE_NULL,
@@ -119,6 +131,18 @@ const typeMap = new Map([
   [t.ARR, [123, 1, 2, 4, "test"]],
   [t.ARR_EMPTY, []],
   [t.ARR_NEW, new Array()],
+
+  [t.ARR_INT8, new Int8Array()],
+  [t.ARR_UINT8, new Uint8Array()],
+  [t.ARR_UINT8CLAMPED, new Uint8ClampedArray()],
+  [t.ARR_INT16, new Int16Array()],
+  [t.ARR_UINT16, new Uint16Array()],
+  [t.ARR_INT32, new Int32Array()],
+  [t.ARR_UINT32, new Uint32Array()],
+  [t.ARR_BIGINT64, new BigInt64Array()],
+  [t.ARR_BIGUINT64, new BigUint64Array()],
+  [t.ARR_FLOAT32, new Float32Array()],
+  [t.ARR_FLOAT64, new Float64Array()],
 
   [
     t.OBJ,
