@@ -83,6 +83,9 @@ enum t {
   REGEX,
 
   SYMBOL,
+  SYMBOL_STATIC_HASINSTANCE,
+  SYMBOL_STATIC_ITERATOR,
+  SYMBOL_STATIC_SEARCH,
 
   MAP,
   MAP_WEAK,
@@ -177,6 +180,9 @@ const typeMap = new Map([
   [t.REGEX, /ab+c/],
 
   [t.SYMBOL, Symbol("foo")],
+  [t.SYMBOL_STATIC_HASINSTANCE, Symbol.hasInstance],
+  [t.SYMBOL_STATIC_ITERATOR, Symbol.iterator],
+  [t.SYMBOL_STATIC_SEARCH, Symbol.search],
 
   [t.MAP, new Map()],
   [t.MAP_WEAK, new WeakMap()],
@@ -217,7 +223,12 @@ testIdentifierFunc(isString, [
 
 testIdentifierFunc(isBoolean, [t.BOOL_TRUE, t.BOOL_FALSE]);
 
-testIdentifierFunc(isSymbol, [t.SYMBOL]);
+testIdentifierFunc(isSymbol, [
+  t.SYMBOL,
+  t.SYMBOL_STATIC_HASINSTANCE,
+  t.SYMBOL_STATIC_ITERATOR,
+  t.SYMBOL_STATIC_SEARCH,
+]);
 
 testIdentifierFunc(isNil, [t.NULL, t.UNDEFINED]);
 
