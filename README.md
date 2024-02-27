@@ -132,6 +132,15 @@ isBoolean("true"); // false
 isBoolean(null); // false
 ```
 
+### `isBigInt`
+
+```javascript
+isBigInt(9007199254740991n); // true
+isBigInt(BigInt("980928340982309482093480298349082934")); // true
+
+isBigInt(9001); // false
+```
+
 ## Contributing
 
 Pull requests are welcome. For significant changes, please discuss them by opening an issue first.
